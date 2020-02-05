@@ -8,7 +8,6 @@ const ExerciseSchema = new Schema({
     weight: Number,
     reps: Number,
     sets: Number,
-    // duration: Number,
     distance: Number
 })
 
