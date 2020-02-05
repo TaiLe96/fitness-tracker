@@ -51,6 +51,7 @@ app.post("/api/workouts", (req, res) => {
 
 // PUT
 app.put("/api/workouts/:id", (req, res) => {
+    console.log(req.body)
     db.Exercise.create(req.body)
     .then((data) => db.Workout.findOneAndUpdate(
         {_id: req.params.id},
