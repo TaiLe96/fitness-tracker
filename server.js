@@ -2,11 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path")
 
-const PORT = process.env.PORT || 5000
+const logger = require("morgan")
+
+const PORT = process.env.PORT || 1000
 
 const app = express();
 
-app.unsubscribe(express.urlencoded({extended: true}));
+app.use(logger("dev"))
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static("public"));
 
