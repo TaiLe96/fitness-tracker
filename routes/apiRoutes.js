@@ -18,7 +18,7 @@ module.exports = (app) => {
 // GET
     app.get("/api/workouts", (req, res) => {
         db.Workout.find({})
-        .populate("exercise")
+        .populate("exercises")
         .then(dbWorkout=> {
             res.json(dbWorkout)
         })
@@ -29,7 +29,7 @@ module.exports = (app) => {
 
     app.get("/api/workouts/range", (req, res) => {
         db.Workout.find({})
-        .populate("exercise")
+        .populate("exercises")
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
@@ -57,7 +57,10 @@ app.put("/api/workouts/:id", (req, res) => {
         {_id: req.params.id},
         {
             $push: {
-                excercise: data._id
+                excercises: data._id
+            },
+            $inc: {
+                totalDuration: data.duration
             }
         },
         { new: true })

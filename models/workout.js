@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
     day: Date,
-    exercise: [
+    exercises: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Excercise"
+            ref: "Exercise"
         }
     ],
     totalDuration: {
