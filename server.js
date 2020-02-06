@@ -15,9 +15,10 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
-require("./routes/htmlRoutes")(app, path)
+require("./routes/htmlRoutes")(app)
 require("./routes/apiRoutes")(app);
 // const uri = process.env.MONGO_URI;
 // mongoose.connect(uri, { useNewUrlParser: true });

@@ -1,5 +1,7 @@
 const db = require("../models")
-
+console.log("*******************************");
+console.log(db );
+console.log("*******************************");
 module.exports = (app) => {
 // POST
 app.post("/api/workouts", (req, res) => {
