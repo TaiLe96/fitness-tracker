@@ -6,7 +6,7 @@ module.exports = (app) => {
 // POST
 app.post("/api/workouts", (req, res) => {
     // Create current date/time
-    db.Workout.create({day: Date.now()})
+    db.Work.create({day: Date.now()})
     .then(Workout => {
         res.json(Workout);
     })
@@ -19,7 +19,7 @@ app.post("/api/workouts", (req, res) => {
 app.put("/api/workouts/:id", (req, res) => {
     console.log(req.body)
     db.Exercise.create(req.body)
-    .then((data) => db.Workout.findOneAndUpdate(
+    .then((data) => db.Work.findOneAndUpdate(
         {_id: req.params.id},
         {
             $push: {
@@ -41,7 +41,7 @@ app.put("/api/workouts/:id", (req, res) => {
 
 // GET
     app.get("/api/workouts", (req, res) => {
-        db.Workout.find({})
+        db.Work.find({})
         .populate("exercises")
         .then(dbWorkout=> {
             res.json(dbWorkout)
@@ -52,7 +52,7 @@ app.put("/api/workouts/:id", (req, res) => {
     })
 
     app.get("/api/workouts/range", (req, res) => {
-        db.Workout.find({})
+        db.Work.find({})
         .populate("exercises")
         .then(dbWorkout => {
             res.json(dbWorkout);
