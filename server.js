@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 require("./routes/htmlRoutes")(app, path)
-require("./routes/apiRoutes")(app);
+require("./routes/apiRoutes")(app, path);
 const uri = process.env.MONGO_URI;
 mongoose.connect(uri, { useNewUrlParser: true });
 const connection = mongoose.connection;
