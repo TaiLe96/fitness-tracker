@@ -1,7 +1,7 @@
 # fitness-tracker
 
 # Summaries
-    This is an application that allows users to keep track of all the exercises. The users can view how much weight, sets, reps, and duration. It also gives out a pie chart that analyze the weight, sets, reps and duration. The app can also track resistance exercise, and record the distance travelled if it is cardio. All of this information is populated in different charts for easy readability and as a way for users to look at all their workouts as a whole. 
+This is an application that allows users to keep track of all the exercises. The users can view how much weight, sets, reps, and duration. It also gives out a pie chart that analyze the weight, sets, reps and duration. The app can also track resistance exercise, and record the distance travelled if it is cardio. All of this information is populated in different charts for easy readability and as a way for users to look at all their workouts as a whole. 
 
 # Techonologies Used
     - HTML: used for structuring and creating elements on the DOM
